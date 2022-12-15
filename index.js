@@ -86,3 +86,28 @@ var finances = [
 ['Jan-2017', 138230],
 ['Feb-2017', 671099]
 ];
+// let sumOfTheMonths = 0;
+// for (let i = 0; i < finances.length; i++) {
+//     const element = finances[i];
+//     for (let j = 0; j < element.length; j++) {
+//         const e = element[j];
+//         console.log(e);
+//         if (e[j]%2===0){
+//             sumOfTheMonths++;
+//         }
+//     }
+//     // console.log(element);
+// }
+let totalMonths = finances.length;
+console.log("Total Months: " + finances.length)
+let = totalSum = 0;
+let totalChange = 0;
+
+for (i = 0; i < finances.length; i++ ){
+    totalSum += finances[i][1];
+    totalChange += finances[i+1][1] - finances[i][1]
+}
+console.log("Total: " + totalSum);
+let averageChange = Math.round((totalSum/totalMonths) * 100) / 100;
+console.log("Average change: " + averageChange);
+

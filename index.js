@@ -115,8 +115,8 @@ for (let i = 1; i < finances.length; i++ ){
 
 }
 console.log("Total: " + totalSum);
-// let averageChange = Math.round((totalSum/totalMonths) * 100) / 100;
-console.log("Average change: " + (averageChange/finances.length).toFixed(2));
+averageChange += finances[0][1];
+console.log("Average change: " + (averageChange/(finances.length)).toFixed(2));
 
 //MAx and min change
 

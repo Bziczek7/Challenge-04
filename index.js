@@ -101,13 +101,38 @@ var finances = [
 let totalMonths = finances.length;
 console.log("Total Months: " + finances.length)
 let = totalSum = 0;
-let totalChange = 0;
+let averageChange = 0;
 
-for (i = 0; i < finances.length; i++ ){
+
+for (let i = 0; i < finances.length; i++ ){
     totalSum += finances[i][1];
-    totalChange += finances[i+1][1] - finances[i][1]
+   
+}
+
+for (let i = 1; i < finances.length; i++ ){
+
+    averageChange += finances[i][1] - finances[i-1][1]
+
 }
 console.log("Total: " + totalSum);
-let averageChange = Math.round((totalSum/totalMonths) * 100) / 100;
-console.log("Average change: " + averageChange);
+// let averageChange = Math.round((totalSum/totalMonths) * 100) / 100;
+console.log("Average change: " + (averageChange/finances.length).toFixed(2));
 
+//MAx and min change
+
+let maxIncrease = 0;
+let minIncrease = finances[1][1] - finances[0][1];
+for (let i = 1; i < finances.length; i++ ){
+    // let oldChnage = 0;
+    let Change = 0;
+    Change = finances[i][1] - finances[i-1][1]
+        if(maxIncrease < Change ){
+            maxIncrease = Change;
+        }
+        if(minIncrease > Change ){
+            minIncrease = Change;
+        }
+}
+
+console.log("Greatest increase: " + maxIncrease);
+console.log("Greatest decrease: " + minIncrease);
